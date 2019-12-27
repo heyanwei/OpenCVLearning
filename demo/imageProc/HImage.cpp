@@ -10,12 +10,12 @@ HImage::HImage(std::string name, std::string image)
     _name = name;
     _image = image;
 
-    std::cout << "HImage init..."<<_name<<" - " << _image << std::endl;
+    std::cout << "HImage init..." << _name << " - " << _image << std::endl;
 }
 
 HImage::~HImage()
 {
-    std::cout << "HImage end..." <<_name<<" - " << _image << std::endl;
+    std::cout << "HImage end..." << _name << " - " << _image << std::endl;
 }
 
 bool HImage::LoadMat()
@@ -33,9 +33,9 @@ bool HImage::LoadMat()
 
 bool HImage::Resize(double scale)
 {
-    std::cout<<"before resize: "<<_mat.rows<<", "<<_mat.cols<<std::endl;
-    cv::resize(_mat, _mat, cv::Size(_mat.rows*scale, _mat.cols*scale));
-    std::cout<<"after resize: "<<_mat.rows<<", "<<_mat.cols<<std::endl;
+    std::cout << "before resize: " << _mat.rows << ", " << _mat.cols << std::endl;
+    cv::resize(_mat, _mat, cv::Size(_mat.rows * scale, _mat.cols * scale));
+    std::cout << "after resize: " << _mat.rows << ", " << _mat.cols << std::endl;
 
     return true;
 }

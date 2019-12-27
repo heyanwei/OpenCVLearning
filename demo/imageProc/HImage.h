@@ -12,7 +12,7 @@ namespace image
 class HImage
 {
 private:
-std::string _name;
+    std::string _name;
     std::string _image;
     cv::Mat _mat;
 

@@ -1,2 +1,2 @@
-source
-demo/build
+source/*
+demo/build/*
