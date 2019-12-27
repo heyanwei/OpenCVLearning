@@ -1,0 +1,6 @@
+/home/wilson/code/opencv/demo/build/CMakeFiles/rebuild_cache.dir
+/home/wilson/code/opencv/demo/build/CMakeFiles/demo.dir
+/home/wilson/code/opencv/demo/build/CMakeFiles/edit_cache.dir
+/home/wilson/code/opencv/demo/build/imageProc/CMakeFiles/rebuild_cache.dir
+/home/wilson/code/opencv/demo/build/imageProc/CMakeFiles/imageproc.dir
+/home/wilson/code/opencv/demo/build/imageProc/CMakeFiles/edit_cache.dir
