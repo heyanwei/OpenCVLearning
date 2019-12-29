@@ -16,7 +16,8 @@ int main(int argc, char const *argv[])
     img->Show();
     cv::waitKey(0);
 
-    img->Resize(0.5);
+    //img->Resize(0.5,2);
+    img->MResize(0.1,0.1);
     img->Show();
     cv::waitKey(0);
 

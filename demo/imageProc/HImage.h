@@ -21,7 +21,9 @@ public:
     ~HImage();
 
     bool LoadMat();
-    bool Resize(double scale);
+    bool Resize(double x_scale, double y_scale);
+    bool MResize(double x_scale, double y_scale);
+
     bool Show();
 };
 
