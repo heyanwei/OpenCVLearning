@@ -152,6 +152,33 @@ HImage.cpp.s:
 	cd /home/wilson/code/opencv/demo/build && $(MAKE) -f imageProc/CMakeFiles/imageproc.dir/build.make imageProc/CMakeFiles/imageproc.dir/HImage.cpp.s
 .PHONY : HImage.cpp.s
 
+HMatrix.o: HMatrix.cpp.o
+
+.PHONY : HMatrix.o
+
+# target to build an object file
+HMatrix.cpp.o:
+	cd /home/wilson/code/opencv/demo/build && $(MAKE) -f imageProc/CMakeFiles/imageproc.dir/build.make imageProc/CMakeFiles/imageproc.dir/HMatrix.cpp.o
+.PHONY : HMatrix.cpp.o
+
+HMatrix.i: HMatrix.cpp.i
+
+.PHONY : HMatrix.i
+
+# target to preprocess a source file
+HMatrix.cpp.i:
+	cd /home/wilson/code/opencv/demo/build && $(MAKE) -f imageProc/CMakeFiles/imageproc.dir/build.make imageProc/CMakeFiles/imageproc.dir/HMatrix.cpp.i
+.PHONY : HMatrix.cpp.i
+
+HMatrix.s: HMatrix.cpp.s
+
+.PHONY : HMatrix.s
+
+# target to generate assembly for a file
+HMatrix.cpp.s:
+	cd /home/wilson/code/opencv/demo/build && $(MAKE) -f imageProc/CMakeFiles/imageproc.dir/build.make imageProc/CMakeFiles/imageproc.dir/HMatrix.cpp.s
+.PHONY : HMatrix.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -164,6 +191,9 @@ help:
 	@echo "... HImage.o"
 	@echo "... HImage.i"
 	@echo "... HImage.s"
+	@echo "... HMatrix.o"
+	@echo "... HMatrix.i"
+	@echo "... HMatrix.s"
 .PHONY : help
 
 

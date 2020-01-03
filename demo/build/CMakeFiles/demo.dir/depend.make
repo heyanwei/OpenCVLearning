@@ -3,4 +3,5 @@
 
 CMakeFiles/demo.dir/Main.cpp.o: ../Main.cpp
 CMakeFiles/demo.dir/Main.cpp.o: ../imageProc/HImage.h
+CMakeFiles/demo.dir/Main.cpp.o: ../imageProc/HMatrix.h
 

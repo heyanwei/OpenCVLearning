@@ -26,3 +26,23 @@ opencv2/highgui.hpp
 opencv2/imgproc.hpp
 -
 
+/home/wilson/code/opencv/demo/imageProc/HMatrix.cpp
+HMatrix.h
+/home/wilson/code/opencv/demo/imageProc/HMatrix.h
+stdio.h
+-
+iostream
+-
+
+/home/wilson/code/opencv/demo/imageProc/HMatrix.h
+string
+-
+opencv2/core.hpp
+-
+opencv2/imgcodecs.hpp
+-
+opencv2/highgui.hpp
+-
+opencv2/imgproc.hpp
+-
+

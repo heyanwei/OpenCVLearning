@@ -81,17 +81,43 @@ imageProc/CMakeFiles/imageproc.dir/HImage.cpp.o.provides: imageProc/CMakeFiles/i
 imageProc/CMakeFiles/imageproc.dir/HImage.cpp.o.provides.build: imageProc/CMakeFiles/imageproc.dir/HImage.cpp.o
 
 
+imageProc/CMakeFiles/imageproc.dir/HMatrix.cpp.o: imageProc/CMakeFiles/imageproc.dir/flags.make
+imageProc/CMakeFiles/imageproc.dir/HMatrix.cpp.o: ../imageProc/HMatrix.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wilson/code/opencv/demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object imageProc/CMakeFiles/imageproc.dir/HMatrix.cpp.o"
+	cd /home/wilson/code/opencv/demo/build/imageProc && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/imageproc.dir/HMatrix.cpp.o -c /home/wilson/code/opencv/demo/imageProc/HMatrix.cpp
+
+imageProc/CMakeFiles/imageproc.dir/HMatrix.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/imageproc.dir/HMatrix.cpp.i"
+	cd /home/wilson/code/opencv/demo/build/imageProc && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wilson/code/opencv/demo/imageProc/HMatrix.cpp > CMakeFiles/imageproc.dir/HMatrix.cpp.i
+
+imageProc/CMakeFiles/imageproc.dir/HMatrix.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/imageproc.dir/HMatrix.cpp.s"
+	cd /home/wilson/code/opencv/demo/build/imageProc && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wilson/code/opencv/demo/imageProc/HMatrix.cpp -o CMakeFiles/imageproc.dir/HMatrix.cpp.s
+
+imageProc/CMakeFiles/imageproc.dir/HMatrix.cpp.o.requires:
+
+.PHONY : imageProc/CMakeFiles/imageproc.dir/HMatrix.cpp.o.requires
+
+imageProc/CMakeFiles/imageproc.dir/HMatrix.cpp.o.provides: imageProc/CMakeFiles/imageproc.dir/HMatrix.cpp.o.requires
+	$(MAKE) -f imageProc/CMakeFiles/imageproc.dir/build.make imageProc/CMakeFiles/imageproc.dir/HMatrix.cpp.o.provides.build
+.PHONY : imageProc/CMakeFiles/imageproc.dir/HMatrix.cpp.o.provides
+
+imageProc/CMakeFiles/imageproc.dir/HMatrix.cpp.o.provides.build: imageProc/CMakeFiles/imageproc.dir/HMatrix.cpp.o
+
+
 # Object files for target imageproc
 imageproc_OBJECTS = \
-"CMakeFiles/imageproc.dir/HImage.cpp.o"
+"CMakeFiles/imageproc.dir/HImage.cpp.o" \
+"CMakeFiles/imageproc.dir/HMatrix.cpp.o"
 
 # External object files for target imageproc
 imageproc_EXTERNAL_OBJECTS =
 
 imageProc/libimageproc.a: imageProc/CMakeFiles/imageproc.dir/HImage.cpp.o
+imageProc/libimageproc.a: imageProc/CMakeFiles/imageproc.dir/HMatrix.cpp.o
 imageProc/libimageproc.a: imageProc/CMakeFiles/imageproc.dir/build.make
 imageProc/libimageproc.a: imageProc/CMakeFiles/imageproc.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/wilson/code/opencv/demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libimageproc.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/wilson/code/opencv/demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libimageproc.a"
 	cd /home/wilson/code/opencv/demo/build/imageProc && $(CMAKE_COMMAND) -P CMakeFiles/imageproc.dir/cmake_clean_target.cmake
 	cd /home/wilson/code/opencv/demo/build/imageProc && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/imageproc.dir/link.txt --verbose=$(VERBOSE)
 
@@ -101,6 +127,7 @@ imageProc/CMakeFiles/imageproc.dir/build: imageProc/libimageproc.a
 .PHONY : imageProc/CMakeFiles/imageproc.dir/build
 
 imageProc/CMakeFiles/imageproc.dir/requires: imageProc/CMakeFiles/imageproc.dir/HImage.cpp.o.requires
+imageProc/CMakeFiles/imageproc.dir/requires: imageProc/CMakeFiles/imageproc.dir/HMatrix.cpp.o.requires
 
 .PHONY : imageProc/CMakeFiles/imageproc.dir/requires
 

@@ -4,3 +4,6 @@
 imageProc/CMakeFiles/imageproc.dir/HImage.cpp.o: ../imageProc/HImage.cpp
 imageProc/CMakeFiles/imageproc.dir/HImage.cpp.o: ../imageProc/HImage.h
 
+imageProc/CMakeFiles/imageproc.dir/HMatrix.cpp.o: ../imageProc/HMatrix.cpp
+imageProc/CMakeFiles/imageproc.dir/HMatrix.cpp.o: ../imageProc/HMatrix.h
+

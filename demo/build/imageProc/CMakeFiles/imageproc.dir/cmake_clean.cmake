@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/imageproc.dir/HImage.cpp.o"
+  "CMakeFiles/imageproc.dir/HMatrix.cpp.o"
   "libimageproc.pdb"
   "libimageproc.a"
 )
