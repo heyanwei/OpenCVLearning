@@ -20,11 +20,15 @@ public:
     HImage(std::string name, std::string image);
     ~HImage();
 
+    //加载图片的矩阵//
     bool LoadMat();
+    //使用opencv自带的缩放功能//
     bool Resize(double x_scale, double y_scale);
-    bool MResize1(double x_scale, double y_scale);
-    bool MResize2(double x_scale, double y_scale);
-
+    //自己实现缩放功能//
+    bool MResize(double x_scale, double y_scale);
+    //自定义剪切图片//
+    bool MCut(int x1, int y1, int x2, int y2);
+    //显示矩阵//
     bool Show();
 };
 

@@ -20,7 +20,8 @@ int main(int argc, char const *argv[])
     cv::waitKey(0);
 
     //img->Resize(0.5,2);
-    img->MResize1(0.1, 0.1);
+    //img->MResize(0.1, 0.1);
+    img->MCut(240, 240, 500, 500);
     img->Show();
     cv::waitKey(0);
 

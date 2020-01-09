@@ -41,44 +41,9 @@ bool HImage::Resize(double x_scale, double y_scale)
     return true;
 }
 
-bool HImage::MResize1(double x_scale, double y_scale)
+bool HImage::MResize(double x_scale, double y_scale)
 {
     //最近邻域插值法
-    int sourceRows = _mat.rows;        //原来的行数
-    int sourceCols = _mat.cols;        //原来的列数
-    int newRows = _mat.rows * x_scale; //新的行数
-    int newCols = _mat.cols * y_scale; //新的列数
-
-    std::cout << "sourceRows: " << sourceRows << ", sourceCols: " << sourceCols
-              << ", newRows: " << newRows << ", newCols: " << newCols << std::endl;
-
-    //初始化矩阵，并把颜色（0，0，0）赋值给给个矩阵的每个元素
-    cv::Mat tmpMat(newRows, newCols, CV_8UC3, cv::Scalar(0, 0, 0));
-    for (int i = 0; i < newRows; i++)
-    {
-        for (int j = 0; j < newCols; j++)
-        {
-            // sourceI/i = sourceRows/newRows，但如果newRows大于sourceRows，会一直是0，因此需要乘1.0变成浮点型
-            int iSource = i * (sourceRows * 1.0 / newRows);
-            int jSource = j * (sourceCols * 1.0 / newCols);
-
-            tmpMat.at<cv::Vec3b>(i, j) = _mat.at<cv::Vec3b>(iSource, jSource);
-        }
-    }
-
-    _mat = tmpMat;
-
-    return true;
-}
-
-
-bool HImage::MResize2(double x_scale, double y_scale)
-{
-    //双线性插值
-    //A1 = 20% 上+80%下 A2
-    //B1 = 30% 左+70%右 B2
-    //最终点 = A1 30% + A2 70%
-    //最终点 = B1 20% + B2 80%
     int sourceRows = _mat.rows;        //原来的行数
     int sourceCols = _mat.cols;        //原来的列数
     int newRows = _mat.rows * x_scale; //新的行数
@@ -109,6 +74,37 @@ bool HImage::MResize2(double x_scale, double y_scale)
 bool HImage::Show()
 {
     cv::imshow(_name, _mat);
+    return true;
+}
+
+bool HImage::MCut(int x1, int y1, int x2, int y2)
+{
+    int sourceRows = _mat.rows;        //原来的行数
+    int sourceCols = _mat.cols;        //原来的列数
+
+    if((x1<0)||(y1<0)||(x2<=x1)||(y2<=y1)||(y2>sourceRows)||(x2>sourceCols))
+    {
+        std::cout<<"传入的参数有误"<<std::endl;
+        return false;
+    }
+
+    int newRows = y2 - y1; //新的行数
+    int newCols = x2 - x1; //新的列数
+
+    std::cout << "MCut sourceRows: " << sourceRows << ", sourceCols: " << sourceCols
+              << ", newRows: " << newRows << ", newCols: " << newCols << std::endl;
+
+    //初始化矩阵，并把颜色（0，0，0）赋值给给个矩阵的每个元素
+    cv::Mat tmpMat(newRows, newCols, CV_8UC3, cv::Scalar(0, 0, 0));
+    for (int i = 0; i < newRows; i++)
+    {
+        for (int j = 0; j < newCols; j++)
+        {
+            tmpMat.at<cv::Vec3b>(i, j) = _mat.at<cv::Vec3b>(y1+i, x1+j);
+        }
+    }
+
+    _mat = tmpMat;
     return true;
 }
 

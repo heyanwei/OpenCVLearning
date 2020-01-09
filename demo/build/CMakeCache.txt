@@ -130,7 +130,7 @@ CMAKE_OBJCOPY:FILEPATH=/usr/bin/objcopy
 CMAKE_OBJDUMP:FILEPATH=/usr/bin/objdump
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=DEMO
+CMAKE_PROJECT_NAME:STATIC=demo
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib
@@ -189,6 +189,12 @@ DEMO_SOURCE_DIR:STATIC=/home/wilson/code/opencv/demo
 
 //The directory containing a CMake configuration file for OpenCV.
 OpenCV_DIR:PATH=/usr/share/OpenCV
+
+//Value Computed by CMake
+demo_BINARY_DIR:STATIC=/home/wilson/code/opencv/demo/build
+
+//Value Computed by CMake
+demo_SOURCE_DIR:STATIC=/home/wilson/code/opencv/demo
 
 //Dependencies for target
 imageproc_LIB_DEPENDS:STATIC=
