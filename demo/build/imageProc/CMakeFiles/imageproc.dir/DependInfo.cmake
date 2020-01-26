@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/wilson/code/opencv/demo/imageProc/HImage.cpp" "/home/wilson/code/opencv/demo/build/imageProc/CMakeFiles/imageproc.dir/HImage.cpp.o"
-  "/home/wilson/code/opencv/demo/imageProc/HMatrix.cpp" "/home/wilson/code/opencv/demo/build/imageProc/CMakeFiles/imageproc.dir/HMatrix.cpp.o"
+  "/home/wilson/code/opencv/OpenCVLearning/demo/imageProc/HImage.cpp" "/home/wilson/code/opencv/OpenCVLearning/demo/build/imageProc/CMakeFiles/imageproc.dir/HImage.cpp.o"
+  "/home/wilson/code/opencv/OpenCVLearning/demo/imageProc/HMatrix.cpp" "/home/wilson/code/opencv/OpenCVLearning/demo/build/imageProc/CMakeFiles/imageproc.dir/HMatrix.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

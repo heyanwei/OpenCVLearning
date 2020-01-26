@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/wilson/code/opencv/demo/Main.cpp" "/home/wilson/code/opencv/demo/build/CMakeFiles/demo.dir/Main.cpp.o"
+  "/home/wilson/code/opencv/OpenCVLearning/demo/Main.cpp" "/home/wilson/code/opencv/OpenCVLearning/demo/build/CMakeFiles/demo.dir/Main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -17,7 +17,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/wilson/code/opencv/demo/build/imageProc/CMakeFiles/imageproc.dir/DependInfo.cmake"
+  "/home/wilson/code/opencv/OpenCVLearning/demo/build/imageProc/CMakeFiles/imageproc.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

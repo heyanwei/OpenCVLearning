@@ -6,5 +6,5 @@ CXX_FLAGS =  -O3 -Wall -fPIC
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -isystem /usr/include/opencv -I/home/wilson/code/opencv/demo/./imageProc -I/home/wilson/code/opencv/demo/. 
+CXX_INCLUDES = -isystem /usr/include/opencv -I/home/wilson/code/opencv/OpenCVLearning/demo/./imageProc -I/home/wilson/code/opencv/OpenCVLearning/demo/. 
 

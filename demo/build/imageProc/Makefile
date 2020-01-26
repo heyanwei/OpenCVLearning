@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/wilson/code/opencv/demo
+CMAKE_SOURCE_DIR = /home/wilson/code/opencv/OpenCVLearning/demo
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/wilson/code/opencv/demo/build
+CMAKE_BINARY_DIR = /home/wilson/code/opencv/OpenCVLearning/demo/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/wilson/code/opencv/demo/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/wilson/code/opencv/demo/build/CMakeFiles /home/wilson/code/opencv/demo/build/imageProc/CMakeFiles/progress.marks
-	cd /home/wilson/code/opencv/demo/build && $(MAKE) -f CMakeFiles/Makefile2 imageProc/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wilson/code/opencv/demo/build/CMakeFiles 0
+	cd /home/wilson/code/opencv/OpenCVLearning/demo/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/wilson/code/opencv/OpenCVLearning/demo/build/CMakeFiles /home/wilson/code/opencv/OpenCVLearning/demo/build/imageProc/CMakeFiles/progress.marks
+	cd /home/wilson/code/opencv/OpenCVLearning/demo/build && $(MAKE) -f CMakeFiles/Makefile2 imageProc/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wilson/code/opencv/OpenCVLearning/demo/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/wilson/code/opencv/demo/build && $(MAKE) -f CMakeFiles/Makefile2 imageProc/clean
+	cd /home/wilson/code/opencv/OpenCVLearning/demo/build && $(MAKE) -f CMakeFiles/Makefile2 imageProc/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,22 +97,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/wilson/code/opencv/demo/build && $(MAKE) -f CMakeFiles/Makefile2 imageProc/preinstall
+	cd /home/wilson/code/opencv/OpenCVLearning/demo/build && $(MAKE) -f CMakeFiles/Makefile2 imageProc/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/wilson/code/opencv/demo/build && $(MAKE) -f CMakeFiles/Makefile2 imageProc/preinstall
+	cd /home/wilson/code/opencv/OpenCVLearning/demo/build && $(MAKE) -f CMakeFiles/Makefile2 imageProc/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/wilson/code/opencv/demo/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/wilson/code/opencv/OpenCVLearning/demo/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 imageProc/CMakeFiles/imageproc.dir/rule:
-	cd /home/wilson/code/opencv/demo/build && $(MAKE) -f CMakeFiles/Makefile2 imageProc/CMakeFiles/imageproc.dir/rule
+	cd /home/wilson/code/opencv/OpenCVLearning/demo/build && $(MAKE) -f CMakeFiles/Makefile2 imageProc/CMakeFiles/imageproc.dir/rule
 .PHONY : imageProc/CMakeFiles/imageproc.dir/rule
 
 # Convenience name for target.
@@ -122,7 +122,7 @@ imageproc: imageProc/CMakeFiles/imageproc.dir/rule
 
 # fast build rule for target.
 imageproc/fast:
-	cd /home/wilson/code/opencv/demo/build && $(MAKE) -f imageProc/CMakeFiles/imageproc.dir/build.make imageProc/CMakeFiles/imageproc.dir/build
+	cd /home/wilson/code/opencv/OpenCVLearning/demo/build && $(MAKE) -f imageProc/CMakeFiles/imageproc.dir/build.make imageProc/CMakeFiles/imageproc.dir/build
 .PHONY : imageproc/fast
 
 HImage.o: HImage.cpp.o
@@ -131,7 +131,7 @@ HImage.o: HImage.cpp.o
 
 # target to build an object file
 HImage.cpp.o:
-	cd /home/wilson/code/opencv/demo/build && $(MAKE) -f imageProc/CMakeFiles/imageproc.dir/build.make imageProc/CMakeFiles/imageproc.dir/HImage.cpp.o
+	cd /home/wilson/code/opencv/OpenCVLearning/demo/build && $(MAKE) -f imageProc/CMakeFiles/imageproc.dir/build.make imageProc/CMakeFiles/imageproc.dir/HImage.cpp.o
 .PHONY : HImage.cpp.o
 
 HImage.i: HImage.cpp.i
@@ -140,7 +140,7 @@ HImage.i: HImage.cpp.i
 
 # target to preprocess a source file
 HImage.cpp.i:
-	cd /home/wilson/code/opencv/demo/build && $(MAKE) -f imageProc/CMakeFiles/imageproc.dir/build.make imageProc/CMakeFiles/imageproc.dir/HImage.cpp.i
+	cd /home/wilson/code/opencv/OpenCVLearning/demo/build && $(MAKE) -f imageProc/CMakeFiles/imageproc.dir/build.make imageProc/CMakeFiles/imageproc.dir/HImage.cpp.i
 .PHONY : HImage.cpp.i
 
 HImage.s: HImage.cpp.s
@@ -149,7 +149,7 @@ HImage.s: HImage.cpp.s
 
 # target to generate assembly for a file
 HImage.cpp.s:
-	cd /home/wilson/code/opencv/demo/build && $(MAKE) -f imageProc/CMakeFiles/imageproc.dir/build.make imageProc/CMakeFiles/imageproc.dir/HImage.cpp.s
+	cd /home/wilson/code/opencv/OpenCVLearning/demo/build && $(MAKE) -f imageProc/CMakeFiles/imageproc.dir/build.make imageProc/CMakeFiles/imageproc.dir/HImage.cpp.s
 .PHONY : HImage.cpp.s
 
 HMatrix.o: HMatrix.cpp.o
@@ -158,7 +158,7 @@ HMatrix.o: HMatrix.cpp.o
 
 # target to build an object file
 HMatrix.cpp.o:
-	cd /home/wilson/code/opencv/demo/build && $(MAKE) -f imageProc/CMakeFiles/imageproc.dir/build.make imageProc/CMakeFiles/imageproc.dir/HMatrix.cpp.o
+	cd /home/wilson/code/opencv/OpenCVLearning/demo/build && $(MAKE) -f imageProc/CMakeFiles/imageproc.dir/build.make imageProc/CMakeFiles/imageproc.dir/HMatrix.cpp.o
 .PHONY : HMatrix.cpp.o
 
 HMatrix.i: HMatrix.cpp.i
@@ -167,7 +167,7 @@ HMatrix.i: HMatrix.cpp.i
 
 # target to preprocess a source file
 HMatrix.cpp.i:
-	cd /home/wilson/code/opencv/demo/build && $(MAKE) -f imageProc/CMakeFiles/imageproc.dir/build.make imageProc/CMakeFiles/imageproc.dir/HMatrix.cpp.i
+	cd /home/wilson/code/opencv/OpenCVLearning/demo/build && $(MAKE) -f imageProc/CMakeFiles/imageproc.dir/build.make imageProc/CMakeFiles/imageproc.dir/HMatrix.cpp.i
 .PHONY : HMatrix.cpp.i
 
 HMatrix.s: HMatrix.cpp.s
@@ -176,7 +176,7 @@ HMatrix.s: HMatrix.cpp.s
 
 # target to generate assembly for a file
 HMatrix.cpp.s:
-	cd /home/wilson/code/opencv/demo/build && $(MAKE) -f imageProc/CMakeFiles/imageproc.dir/build.make imageProc/CMakeFiles/imageproc.dir/HMatrix.cpp.s
+	cd /home/wilson/code/opencv/OpenCVLearning/demo/build && $(MAKE) -f imageProc/CMakeFiles/imageproc.dir/build.make imageProc/CMakeFiles/imageproc.dir/HMatrix.cpp.s
 .PHONY : HMatrix.cpp.s
 
 # Help Target
@@ -205,6 +205,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/wilson/code/opencv/demo/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/wilson/code/opencv/OpenCVLearning/demo/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

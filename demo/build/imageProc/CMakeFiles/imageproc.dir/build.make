@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/wilson/code/opencv/demo
+CMAKE_SOURCE_DIR = /home/wilson/code/opencv/OpenCVLearning/demo
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/wilson/code/opencv/demo/build
+CMAKE_BINARY_DIR = /home/wilson/code/opencv/OpenCVLearning/demo/build
 
 # Include any dependencies generated for this target.
 include imageProc/CMakeFiles/imageproc.dir/depend.make
@@ -59,16 +59,16 @@ include imageProc/CMakeFiles/imageproc.dir/flags.make
 
 imageProc/CMakeFiles/imageproc.dir/HImage.cpp.o: imageProc/CMakeFiles/imageproc.dir/flags.make
 imageProc/CMakeFiles/imageproc.dir/HImage.cpp.o: ../imageProc/HImage.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wilson/code/opencv/demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object imageProc/CMakeFiles/imageproc.dir/HImage.cpp.o"
-	cd /home/wilson/code/opencv/demo/build/imageProc && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/imageproc.dir/HImage.cpp.o -c /home/wilson/code/opencv/demo/imageProc/HImage.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wilson/code/opencv/OpenCVLearning/demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object imageProc/CMakeFiles/imageproc.dir/HImage.cpp.o"
+	cd /home/wilson/code/opencv/OpenCVLearning/demo/build/imageProc && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/imageproc.dir/HImage.cpp.o -c /home/wilson/code/opencv/OpenCVLearning/demo/imageProc/HImage.cpp
 
 imageProc/CMakeFiles/imageproc.dir/HImage.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/imageproc.dir/HImage.cpp.i"
-	cd /home/wilson/code/opencv/demo/build/imageProc && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wilson/code/opencv/demo/imageProc/HImage.cpp > CMakeFiles/imageproc.dir/HImage.cpp.i
+	cd /home/wilson/code/opencv/OpenCVLearning/demo/build/imageProc && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wilson/code/opencv/OpenCVLearning/demo/imageProc/HImage.cpp > CMakeFiles/imageproc.dir/HImage.cpp.i
 
 imageProc/CMakeFiles/imageproc.dir/HImage.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/imageproc.dir/HImage.cpp.s"
-	cd /home/wilson/code/opencv/demo/build/imageProc && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wilson/code/opencv/demo/imageProc/HImage.cpp -o CMakeFiles/imageproc.dir/HImage.cpp.s
+	cd /home/wilson/code/opencv/OpenCVLearning/demo/build/imageProc && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wilson/code/opencv/OpenCVLearning/demo/imageProc/HImage.cpp -o CMakeFiles/imageproc.dir/HImage.cpp.s
 
 imageProc/CMakeFiles/imageproc.dir/HImage.cpp.o.requires:
 
@@ -83,16 +83,16 @@ imageProc/CMakeFiles/imageproc.dir/HImage.cpp.o.provides.build: imageProc/CMakeF
 
 imageProc/CMakeFiles/imageproc.dir/HMatrix.cpp.o: imageProc/CMakeFiles/imageproc.dir/flags.make
 imageProc/CMakeFiles/imageproc.dir/HMatrix.cpp.o: ../imageProc/HMatrix.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wilson/code/opencv/demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object imageProc/CMakeFiles/imageproc.dir/HMatrix.cpp.o"
-	cd /home/wilson/code/opencv/demo/build/imageProc && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/imageproc.dir/HMatrix.cpp.o -c /home/wilson/code/opencv/demo/imageProc/HMatrix.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wilson/code/opencv/OpenCVLearning/demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object imageProc/CMakeFiles/imageproc.dir/HMatrix.cpp.o"
+	cd /home/wilson/code/opencv/OpenCVLearning/demo/build/imageProc && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/imageproc.dir/HMatrix.cpp.o -c /home/wilson/code/opencv/OpenCVLearning/demo/imageProc/HMatrix.cpp
 
 imageProc/CMakeFiles/imageproc.dir/HMatrix.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/imageproc.dir/HMatrix.cpp.i"
-	cd /home/wilson/code/opencv/demo/build/imageProc && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wilson/code/opencv/demo/imageProc/HMatrix.cpp > CMakeFiles/imageproc.dir/HMatrix.cpp.i
+	cd /home/wilson/code/opencv/OpenCVLearning/demo/build/imageProc && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wilson/code/opencv/OpenCVLearning/demo/imageProc/HMatrix.cpp > CMakeFiles/imageproc.dir/HMatrix.cpp.i
 
 imageProc/CMakeFiles/imageproc.dir/HMatrix.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/imageproc.dir/HMatrix.cpp.s"
-	cd /home/wilson/code/opencv/demo/build/imageProc && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wilson/code/opencv/demo/imageProc/HMatrix.cpp -o CMakeFiles/imageproc.dir/HMatrix.cpp.s
+	cd /home/wilson/code/opencv/OpenCVLearning/demo/build/imageProc && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wilson/code/opencv/OpenCVLearning/demo/imageProc/HMatrix.cpp -o CMakeFiles/imageproc.dir/HMatrix.cpp.s
 
 imageProc/CMakeFiles/imageproc.dir/HMatrix.cpp.o.requires:
 
@@ -117,9 +117,9 @@ imageProc/libimageproc.a: imageProc/CMakeFiles/imageproc.dir/HImage.cpp.o
 imageProc/libimageproc.a: imageProc/CMakeFiles/imageproc.dir/HMatrix.cpp.o
 imageProc/libimageproc.a: imageProc/CMakeFiles/imageproc.dir/build.make
 imageProc/libimageproc.a: imageProc/CMakeFiles/imageproc.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/wilson/code/opencv/demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libimageproc.a"
-	cd /home/wilson/code/opencv/demo/build/imageProc && $(CMAKE_COMMAND) -P CMakeFiles/imageproc.dir/cmake_clean_target.cmake
-	cd /home/wilson/code/opencv/demo/build/imageProc && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/imageproc.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/wilson/code/opencv/OpenCVLearning/demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libimageproc.a"
+	cd /home/wilson/code/opencv/OpenCVLearning/demo/build/imageProc && $(CMAKE_COMMAND) -P CMakeFiles/imageproc.dir/cmake_clean_target.cmake
+	cd /home/wilson/code/opencv/OpenCVLearning/demo/build/imageProc && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/imageproc.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 imageProc/CMakeFiles/imageproc.dir/build: imageProc/libimageproc.a
@@ -132,10 +132,10 @@ imageProc/CMakeFiles/imageproc.dir/requires: imageProc/CMakeFiles/imageproc.dir/
 .PHONY : imageProc/CMakeFiles/imageproc.dir/requires
 
 imageProc/CMakeFiles/imageproc.dir/clean:
-	cd /home/wilson/code/opencv/demo/build/imageProc && $(CMAKE_COMMAND) -P CMakeFiles/imageproc.dir/cmake_clean.cmake
+	cd /home/wilson/code/opencv/OpenCVLearning/demo/build/imageProc && $(CMAKE_COMMAND) -P CMakeFiles/imageproc.dir/cmake_clean.cmake
 .PHONY : imageProc/CMakeFiles/imageproc.dir/clean
 
 imageProc/CMakeFiles/imageproc.dir/depend:
-	cd /home/wilson/code/opencv/demo/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/wilson/code/opencv/demo /home/wilson/code/opencv/demo/imageProc /home/wilson/code/opencv/demo/build /home/wilson/code/opencv/demo/build/imageProc /home/wilson/code/opencv/demo/build/imageProc/CMakeFiles/imageproc.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/wilson/code/opencv/OpenCVLearning/demo/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/wilson/code/opencv/OpenCVLearning/demo /home/wilson/code/opencv/OpenCVLearning/demo/imageProc /home/wilson/code/opencv/OpenCVLearning/demo/build /home/wilson/code/opencv/OpenCVLearning/demo/build/imageProc /home/wilson/code/opencv/OpenCVLearning/demo/build/imageProc/CMakeFiles/imageproc.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : imageProc/CMakeFiles/imageproc.dir/depend
 

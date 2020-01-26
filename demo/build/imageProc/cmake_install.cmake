@@ -1,4 +1,4 @@
-# Install script for directory: /home/wilson/code/opencv/demo/imageProc
+# Install script for directory: /home/wilson/code/opencv/OpenCVLearning/demo/imageProc
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
