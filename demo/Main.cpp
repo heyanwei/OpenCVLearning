@@ -88,7 +88,9 @@ int main(int argc, char const *argv[])
     else if (pro == "camera")
     {
         camera::HCamera came;
+        came.LoadXml();
         came.Open();
+        came.SaveFace();
     }
 
     return 0;

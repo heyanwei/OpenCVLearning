@@ -1,5 +1,5 @@
 came:
-	cd build && ./demo camera
+	cd build && ./demo camera show
 
 image:
 	cd build && ./demo image cut
