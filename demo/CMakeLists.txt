@@ -8,10 +8,14 @@ SET(CMAKE_CXX_FLAGS_RELEASE "$ENV{CXXFLAGS} -O3 -Wall -fPIC")
 
 find_package(OpenCV REQUIRED)
 
+add_definitions(-D ELPP_THREAD_SAFE)
+add_definitions(-D DATE_ROLL_BACK_LOG)
+
 aux_source_directory(. DIRSRCS)
-include_directories(${OpenCV_INCLUDE_DIRS}  ./imageProc ./camera ./)
+include_directories(${OpenCV_INCLUDE_DIRS}  ./imageProc ./camera ./utils/log ./)
 add_subdirectory(imageProc)
 add_subdirectory(camera)
+add_subdirectory(utils)
 
 add_executable(demo ${DIRSRCS})
-target_link_libraries(demo ${OpenCV_LIBS} imageproc camera)
+target_link_libraries(demo ${OpenCV_LIBS} imageproc camera utils)
