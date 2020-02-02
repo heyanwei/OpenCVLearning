@@ -81,17 +81,53 @@ bool HCamera::SaveFace(std::string name)
             return false;
         }
 
-        LOG(INFO)<<"HCamera catch one face";
+        LOG(INFO) << "HCamera catch one face";
 
         cv::rectangle(frame, rect[0], cv::Scalar(0, 0, 255), 2, 8, 0);
 
-        std::string path = "/home/wilson/code/img/hyw/" + name + ".png";
-        if (!cv::imwrite(path, frame))
+        std::string path = "/home/wilson/code/img/hyw/face" + name + ".png";
+        cv::Rect roi = rect[0];
+        if (!cv::imwrite(path, frame(roi)))
         {
             LOG(ERROR) << "HCamera write failed...";
             return false;
         }
+        
         imshow("HCamera", frame);
+        imshow("face", frame(roi));
+
+        return true;
+    }
+    catch (const std::exception &e)
+    {
+        LOG(ERROR) << e.what();
+    }
+    return false;
+}
+
+bool HCamera::Predict()
+{
+    try
+    {
+        cv::Mat frame;
+        _capture >> frame;
+        if (frame.empty())
+        {
+            LOG(ERROR) << "HCamera frame is empty...";
+            return false;
+        }
+        cv::Mat tmpMat = frame;
+        cv::cvtColor(tmpMat, tmpMat, CV_BGR2GRAY);
+        cv::equalizeHist(tmpMat, tmpMat); //直方图均衡化
+
+        std::vector<cv::Rect> rect;
+        _faceCascaClassifier.detectMultiScale(tmpMat, rect, 1.1, 3, 0, cv::Size(25, 25));
+        if (rect.size() != 1)
+        {
+            LOG(ERROR) << "HCamera catch not 1 face..." << rect.size();
+            imshow("HCamera", frame);
+            return false;
+        }
 
         return true;
     }

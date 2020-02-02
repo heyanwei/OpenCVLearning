@@ -17,6 +17,7 @@ public:
     bool Open();
     bool Show();
     bool SaveFace(std::string name);
+    bool Predict();
 
 private:
     cv::VideoCapture _capture;

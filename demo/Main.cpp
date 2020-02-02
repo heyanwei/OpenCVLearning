@@ -95,6 +95,18 @@ int main(int argc, char const *argv[])
                 cv::waitKey(5);
             }
         }
+        else if (func == "predict" || func == "p")
+        {
+            int n = 10;
+            while (n)
+            {
+                if (came.Predict())
+                {
+                    n--;
+                }
+                cv::waitKey(10);
+            }
+        }
         else if (func == "catch" || func == "c")
         {
             int n = 10;
