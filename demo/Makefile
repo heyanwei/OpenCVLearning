@@ -1,8 +1,8 @@
 came:
-	cd build && ./demo camera show
+	cd build && sudo ./demo camera show
 
 image:
-	cd build && ./demo image cut
+	cd build && sudo ./demo image cut
 
 docker:
 	docker build -t wilsonhe2019/opencvdemo .

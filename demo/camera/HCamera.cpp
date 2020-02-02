@@ -10,12 +10,12 @@ namespace camera
 {
 HCamera::HCamera()
 {
-    std::cout << "HCamera init..." << std::endl;
+    LOG(INFO) << "HCamera init..." << el::base::consts::kPerformanceLoggerId;
 }
 
 HCamera::~HCamera()
 {
-    std::cout << "HCamera end..." << std::endl;
+    LOG(INFO) << "HCamera end...";
 }
 
 bool HCamera::LoadXml()
@@ -30,89 +30,73 @@ bool HCamera::LoadXml()
 
 bool HCamera::Open()
 {
-    std::cout << "HCamera start to open ..." << std::endl;
+    LOG(INFO) << "HCamera start to open ...";
 
     _capture.open(0);
     if (!_capture.isOpened())
     {
-        std::cout << "HCamera open failed..." << std::endl;
+        LOG(INFO) << "HCamera start failed ...";
         return false;
     }
-    std::cout << "HCamera open success..." << std::endl;
+    LOG(INFO) << "HCamera start succeeded ...";
 
     return true;
 }
 
 bool HCamera::Show()
 {
-    while (true)
+    cv::Mat frame;
+    _capture >> frame;
+    if (frame.empty())
     {
-        cv::Mat frame;
-        _capture >> frame;
-        if (frame.empty())
-        {
-            std::cout << "HCamera frame is empty..." << std::endl;
-            break;
-        }
-        cv::Mat tmpMat = frame.clone();
-        cv::cvtColor(tmpMat, tmpMat, CV_BGR2GRAY);
-        cv::equalizeHist(tmpMat, tmpMat); //直方图均衡化
-        std::vector<cv::Rect> rect;
-        //分类器在不同的人脸尺度空间上计算并将结果返回到rect矩形数组中
-        _cascaClassifier.detectMultiScale(tmpMat, rect, 1.1, 3, 0, cv::Size(25, 25));
-
-        for (size_t t = 0; t < rect.size(); t++)
-        {
-            cv::rectangle(frame, rect[static_cast<int>(t)], cv::Scalar(0, 0, 255), 2, 8, 0);
-        }
-
-        imshow("HCamera", frame);
-        cv::waitKey(20);
+        LOG(ERROR) << "HCamera frame is empty...";
+        return false;
     }
-    return false;
+    imshow("HCamera", frame);
+
+    return true;
 }
 
 bool HCamera::SaveFace()
 {
-    int num = 0;
-    while (true)
+    try
     {
         cv::Mat frame;
         _capture >> frame;
         if (frame.empty())
         {
-            std::cout << "HCamera frame is empty..." << std::endl;
-            break;
+            LOG(ERROR) << "HCamera frame is empty...";
+            return false;
         }
-        cv::Mat tmpMat = frame.clone();
+        cv::Mat tmpMat = frame;
         cv::cvtColor(tmpMat, tmpMat, CV_BGR2GRAY);
         cv::equalizeHist(tmpMat, tmpMat); //直方图均衡化
 
         std::vector<cv::Rect> rect;
         _cascaClassifier.detectMultiScale(tmpMat, rect, 1.1, 3, 0, cv::Size(25, 25));
-        if (rect.size() > 1)
+        if (rect.size() != 1)
         {
-            std::cout << "HCamera has more faces..." << std::endl;
-            continue;
+            LOG(ERROR) << "HCamera catch not 1 face..." << rect.size();
+            return false;
         }
 
-        cv::rectangle(frame, rect[static_cast<int>(0)], cv::Scalar(0, 0, 255), 2, 8, 0);
+        LOG(INFO)<<"HCamera catch one face";
 
-        std::string path = std::to_string(num) + ".png";
+        cv::rectangle(frame, rect[0], cv::Scalar(0, 0, 255), 2, 8, 0);
+
+        std::string path = "/home/wilson/code/img/hyw/" + std::to_string(1) + ".png";
         if (!cv::imwrite(path, frame))
         {
-            std::cout << "HCamera write failed..." << std::endl;
-            continue;
+            LOG(ERROR) << "HCamera write failed...";
+            return false;
         }
-        num++;
-
-        if (num > 9)
-        {
-            break;
-        }
-
         imshow("HCamera", frame);
-        cv::waitKey(20);
+
+        return true;
+    }
+    catch (const std::exception &e)
+    {
+        LOG(ERROR) << e.what();
     }
     return false;
 }
