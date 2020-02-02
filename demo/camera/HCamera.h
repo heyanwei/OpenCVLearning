@@ -16,7 +16,7 @@ public:
     bool LoadXml();
     bool Open();
     bool Show();
-    bool SaveFace();
+    bool SaveFace(std::string name);
 
 private:
     cv::VideoCapture _capture;

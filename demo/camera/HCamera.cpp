@@ -57,7 +57,7 @@ bool HCamera::Show()
     return true;
 }
 
-bool HCamera::SaveFace()
+bool HCamera::SaveFace(std::string name)
 {
     try
     {
@@ -77,6 +77,7 @@ bool HCamera::SaveFace()
         if (rect.size() != 1)
         {
             LOG(ERROR) << "HCamera catch not 1 face..." << rect.size();
+            imshow("HCamera", frame);
             return false;
         }
 
@@ -84,7 +85,7 @@ bool HCamera::SaveFace()
 
         cv::rectangle(frame, rect[0], cv::Scalar(0, 0, 255), 2, 8, 0);
 
-        std::string path = "/home/wilson/code/img/hyw/" + std::to_string(1) + ".png";
+        std::string path = "/home/wilson/code/img/hyw/" + name + ".png";
         if (!cv::imwrite(path, frame))
         {
             LOG(ERROR) << "HCamera write failed...";

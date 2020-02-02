@@ -35,6 +35,7 @@ int HExit()
 int main(int argc, char const *argv[])
 {
     initlog();
+    LOG(INFO) << "===================================";
     LOG(INFO) << "===========program start===========";
 
     if (argc < 3)
@@ -46,6 +47,7 @@ int main(int argc, char const *argv[])
     LOG(INFO) << "argc: " << argc << ", argv: " << argv[0] << " " << argv[1] << " " << argv[2];
 
     std::string pro = argv[1];
+    std::string func = argv[2];
 
     if (pro == "image")
     {
@@ -63,7 +65,7 @@ int main(int argc, char const *argv[])
             std::cout << "parameter error..." << std::endl;
             return HExit();
         }
-        std::string func = argv[2];
+
         if (func == "resize")
         {
             //img->Resize(0.5,2);
@@ -84,7 +86,27 @@ int main(int argc, char const *argv[])
         camera::HCamera came;
         came.LoadXml();
         came.Open();
-        came.SaveFace();
+
+        if (func == "show" || func == "s")
+        {
+            while (true)
+            {
+                came.Show();
+                cv::waitKey(30);
+            }
+        }
+        else if (func == "catch" || func == "c")
+        {
+            int n = 10;
+            while (n)
+            {
+                if (came.SaveFace(std::to_string(n)))
+                {
+                    n--;
+                }
+                cv::waitKey(30);
+            }
+        }
     }
 
     return HExit();
