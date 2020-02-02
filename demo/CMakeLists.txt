@@ -10,6 +10,7 @@ find_package(OpenCV REQUIRED)
 
 add_definitions(-D ELPP_THREAD_SAFE)
 add_definitions(-D DATE_ROLL_BACK_LOG)
+add_definitions(-D ISCONSOLE)
 
 aux_source_directory(. DIRSRCS)
 include_directories(${OpenCV_INCLUDE_DIRS}  ./imageProc ./camera ./utils/log ./)

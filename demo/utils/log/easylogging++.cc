@@ -2287,6 +2287,10 @@ namespace el {
 						m_data->logMessage()->level());
 					if (fs != nullptr) {
 						fs->write(logLine.c_str(), logLine.size());
+						#ifdef ISCONSOLE
+						std::cout<<logLine<<std::endl;
+						#endif // ISCONSOLE
+						
 						if (fs->fail()) {
 							ELPP_INTERNAL_ERROR("Unable to write log to file ["
 								<< m_data->logMessage()->logger()->m_typedConfigurations->filename(m_data->logMessage()->level()) << "].\n"
