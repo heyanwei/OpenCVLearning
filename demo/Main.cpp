@@ -92,7 +92,7 @@ int main(int argc, char const *argv[])
             while (true)
             {
                 came.Show();
-                cv::waitKey(30);
+                cv::waitKey(5);
             }
         }
         else if (func == "catch" || func == "c")
@@ -104,7 +104,7 @@ int main(int argc, char const *argv[])
                 {
                     n--;
                 }
-                cv::waitKey(30);
+                cv::waitKey(10);
             }
         }
     }

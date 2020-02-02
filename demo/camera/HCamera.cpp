@@ -20,7 +20,7 @@ HCamera::~HCamera()
 
 bool HCamera::LoadXml()
 {
-    if (!_cascaClassifier.load("/home/wilson/software/opencv/data/haarcascades/haarcascade_frontalface_alt.xml"))
+    if (!_faceCascaClassifier.load("/home/wilson/software/opencv/data/haarcascades/haarcascade_frontalface_alt.xml"))
     {
         LOG(ERROR) << "load face model failed...";
         return false;
@@ -73,7 +73,7 @@ bool HCamera::SaveFace(std::string name)
         cv::equalizeHist(tmpMat, tmpMat); //直方图均衡化
 
         std::vector<cv::Rect> rect;
-        _cascaClassifier.detectMultiScale(tmpMat, rect, 1.1, 3, 0, cv::Size(25, 25));
+        _faceCascaClassifier.detectMultiScale(tmpMat, rect, 1.1, 3, 0, cv::Size(25, 25));
         if (rect.size() != 1)
         {
             LOG(ERROR) << "HCamera catch not 1 face..." << rect.size();

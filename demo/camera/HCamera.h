@@ -20,7 +20,7 @@ public:
 
 private:
     cv::VideoCapture _capture;
-    cv::CascadeClassifier _cascaClassifier;
+    cv::CascadeClassifier _faceCascaClassifier;
 };
 
 } // namespace camera
