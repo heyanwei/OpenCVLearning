@@ -104,7 +104,7 @@ int main(int argc, char const *argv[])
                 {
                     n--;
                 }
-                cv::waitKey(10);
+                cv::waitKey(5);
             }
         }
         else if (func == "catch" || func == "c")
@@ -116,8 +116,12 @@ int main(int argc, char const *argv[])
                 {
                     n--;
                 }
-                cv::waitKey(10);
+                cv::waitKey(5);
             }
+        }
+        else if(func =="train" || func == "t")
+        {
+            came.Train();
         }
     }
 

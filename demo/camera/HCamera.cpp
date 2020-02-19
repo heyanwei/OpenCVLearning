@@ -73,7 +73,7 @@ bool HCamera::SaveFace(std::string name)
         cv::equalizeHist(tmpMat, tmpMat); //直方图均衡化
 
         std::vector<cv::Rect> rect;
-        _faceCascaClassifier.detectMultiScale(tmpMat, rect, 1.1, 3, 0, cv::Size(25, 25));
+        _faceCascaClassifier.detectMultiScale(tmpMat, rect, 1.1, 3, 0, cv::Size(120, 120));
         if (rect.size() != 1)
         {
             LOG(ERROR) << "HCamera catch not 1 face..." << rect.size();
@@ -92,7 +92,7 @@ bool HCamera::SaveFace(std::string name)
             LOG(ERROR) << "HCamera write failed...";
             return false;
         }
-        
+
         imshow("HCamera", frame);
         imshow("face", frame(roi));
 
@@ -103,6 +103,36 @@ bool HCamera::SaveFace(std::string name)
         LOG(ERROR) << e.what();
     }
     return false;
+}
+
+bool HCamera::Train()
+{
+    std::vector<cv::Mat> images;
+    std::vector<std::string> labels;
+
+    std::string names[2] = {"lijingru", "wilson"};
+
+    for (int n = 0; n < 2; n++)
+    {
+        for (int i = 1; i < 11; i++)
+        {
+            std::string path = "/home/wilson/code/img/" + names[n] + "/face" + std::to_string(i) + ".png";
+            cv::Mat img = cv::imread(path, 0);
+            if (!img.data)
+            {
+                continue;
+            }
+            images.push_back(img);
+            labels.push_back(names[n]);
+        }
+    }
+    LOG(INFO)<<"face number "<<labels.size();
+
+    //cv::Ptr<cv::face::FaceRecognizer> trainModel = cv::face::createEigenFaceRecognizer();
+    //trainModel->train(images, labels);
+    //trainModel->save("face_record.xml");
+
+    return true;
 }
 
 bool HCamera::Predict()
