@@ -81,6 +81,21 @@ int main(int argc, char const *argv[])
     {
         std::shared_ptr<image::HMatrix> mat = std::make_shared<image::HMatrix>();
     }
+    else if (pro == "vedio")
+    {
+        cv::VideoCapture capture("1.dav");
+        cv::Mat frame;
+        
+        while (true)
+        {
+            capture >> frame;
+            if(frame.empty())
+            {
+                break;
+            }
+            imshow("HCamera", frame);
+        }
+    }
     else if (pro == "camera")
     {
         camera::HCamera came;
@@ -119,7 +134,7 @@ int main(int argc, char const *argv[])
                 cv::waitKey(5);
             }
         }
-        else if(func =="train" || func == "t")
+        else if (func == "train" || func == "t")
         {
             came.Train();
         }
