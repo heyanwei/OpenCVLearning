@@ -1,20 +1,22 @@
-#include "imageProc/HImage.h"
-#include "imageProc/HMatrix.h"
-#include "camera/HCamera.h"
-
 #include <memory>
 #include <iostream>
 
 #include "utils/log/easylogging++.h"
+#include "console/YConsole.h"
+#include "devices/camera/HCamera.h"
+#include "devices/camera/DahuaCamera.h"
+#include "devices/vedio/YVedio.h"
+#include "person/face/YFace.h"
+#include "person/body/YBody.h"
 
 INITIALIZE_EASYLOGGINGPP
 
-void RollbackHandle(const char *filename, std::size_t size) {}
+void RollbackHandle(const char* filename, std::size_t size) {}
 void initlog()
 {
     el::Loggers::reconfigureAllLoggers(el::ConfigurationType::Format,
-                                       "%datetime|%level: %msg [%fbase %line]");
-    el::Loggers::reconfigureAllLoggers(el::ConfigurationType::Filename, "/home/wilson/code/opencv/log/%datetime{%Y%M%d}.log");
+        "%datetime|%level: %msg [%fbase %line]");
+    el::Loggers::reconfigureAllLoggers(el::ConfigurationType::Filename, "D:\\log\\%datetime{%Y%M%d}.log");
     el::Loggers::reconfigureAllLoggers(el::ConfigurationType::MaxLogFileSize, "2097152");
     el::Loggers::reconfigureAllLoggers(el::ConfigurationType::PerformanceTracking, "false");
     el::Loggers::reconfigureAllLoggers(el::ConfigurationType::ToStandardOutput, "false");
@@ -27,117 +29,111 @@ void initlog()
 
 int HExit()
 {
-    cv::waitKey(0);
-    LOG(INFO) << "================program end================";
+    LOG(INFO) << "程序结束 =============";
     return 0;
 }
 
-int main(int argc, char const *argv[])
+int main(int argc, char const* argv[])
 {
     initlog();
-    LOG(INFO) << "===================================";
-    LOG(INFO) << "===========program start===========";
 
-    if (argc < 3)
+    LOG(INFO) << "======================";
+    LOG(INFO) << "程序启动 =============";
+
+    console::YConsole& cons = console::YConsole::Instance();
+    std::string str = "";
+
+    camera::HCamera came;
+    camera::DahuaCamera dahua;
+    vedio::YVedio ved;
+    cv::Mat imat;
+
+    person::YFace pFace;
+    person::YBody pBody;
+    if (!pFace.Init())
     {
-        LOG(ERROR) << "Parameters are less than 3..." << el::base::consts::kPerformanceLoggerId;
-        return HExit();
+        LOG(ERROR) << "pFace初始化失败...";
+        return 0;
+    }
+    if (!pBody.Init())
+    {
+        LOG(ERROR) << "pBody初始化失败...";
+        return 0;
     }
 
-    LOG(INFO) << "argc: " << argc << ", argv: " << argv[0] << " " << argv[1] << " " << argv[2];
-
-    std::string pro = argv[1];
-    std::string func = argv[2];
-
-    if (pro == "image")
+    while (1)
     {
-        std::shared_ptr<image::HImage> img = std::make_shared<
-            image::HImage>("smile", "../images/1.jpg");
-        if (!img->LoadMat())
+        if (!cons.IfContinue())
         {
-            std::cout << "LoadMat failed" << std::endl;
-            return HExit();
-        }
-        img->Show();
-        cv::waitKey(0);
-        if (argc < 3)
-        {
-            std::cout << "parameter error..." << std::endl;
-            return HExit();
+            break;
         }
 
-        if (func == "resize")
+        str = cons.Show();
+        LOG(INFO) << "执行命令：" << str;
+        if (str == "bye" || str == "b")
         {
-            //img->Resize(0.5,2);
-            img->MResize(0.1, 0.1);
+            break;
         }
-        else if (func == "cut")
+
+        int code = atoi(str.c_str());      
+
+        switch (code)
         {
-            img->MCut(240, 240, 500, 500);
+        case (int)console::MainConsoleCode::Image:
+            imat = cv::imread("D:\\img\\1.jpg");
+            if (!imat.empty())
+            {
+                std::vector<cv::Mat> faces;
+                pFace.HasObject(imat, imat, faces);
+                cv::imshow("camera", imat);
+                cv::waitKey();
+                pBody.HasObject(imat, imat, faces);
+                cv::imshow("camera", imat);
+                cv::waitKey();
+            }
+            break;
+        case (int)console::MainConsoleCode::Camera:
+            if (came.Open())
+            {
+                while (1)
+                {
+                    cv::Mat p;
+                    if (came.Show(p) && (!p.empty()))
+                    {
+                        std::vector<cv::Mat> faces;
+                        pFace.HasObject(p, p, faces);
+                        cv::imshow("camera", p);
+                    }
+                    cv::waitKey(20);                  
+                }
+            }
+            break;
+        case (int)console::MainConsoleCode::DahuaCamera:
+            if (dahua.Open("192.168.1.55:554", "admin", "yeefung123"))
+            {
+                while (1)
+                {
+                    cv::Mat p;
+                    if (dahua.Show(p) && (!p.empty()))
+                    {
+                        std::vector<cv::Mat> faces;
+                        pFace.HasObject(p, p, faces);
+                        cv::imshow("camera", p);
+                    }
+                    cv::waitKey(20);
+                }
+            }
+            break;
+        case (int)console::MainConsoleCode::Vedio:          
+            
+            break;
+        case (int)console::MainConsoleCode::Train:     
+            pFace.Train();
+            break;
+        default:
+            break;
         }
-        img->Show();
-    }
-    else if (pro == "matrix")
-    {
-        std::shared_ptr<image::HMatrix> mat = std::make_shared<image::HMatrix>();
-    }
-    else if (pro == "vedio")
-    {
-        cv::VideoCapture capture("1.dav");
-        cv::Mat frame;
         
-        while (true)
-        {
-            capture >> frame;
-            if(frame.empty())
-            {
-                break;
-            }
-            imshow("HCamera", frame);
-        }
-    }
-    else if (pro == "camera")
-    {
-        camera::HCamera came;
-        came.LoadXml();
-        came.Open();
-
-        if (func == "show" || func == "s")
-        {
-            while (true)
-            {
-                came.Show();
-                cv::waitKey(5);
-            }
-        }
-        else if (func == "predict" || func == "p")
-        {
-            int n = 10;
-            while (n)
-            {
-                if (came.Predict())
-                {
-                    n--;
-                }
-                cv::waitKey(5);
-            }
-        }
-        else if (func == "catch" || func == "c")
-        {
-            int n = 10;
-            while (n)
-            {
-                if (came.SaveFace(std::to_string(n)))
-                {
-                    n--;
-                }
-                cv::waitKey(5);
-            }
-        }
-        else if (func == "train" || func == "t")
-        {
-            came.Train();
-        }
     }
 
     return HExit();
