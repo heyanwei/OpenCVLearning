@@ -16,7 +16,7 @@ void initlog()
 {
     el::Loggers::reconfigureAllLoggers(el::ConfigurationType::Format,
         "%datetime|%level: %msg [%fbase %line]");
-    el::Loggers::reconfigureAllLoggers(el::ConfigurationType::Filename, "D:\\log\\%datetime{%Y%M%d}.log");
+    el::Loggers::reconfigureAllLoggers(el::ConfigurationType::Filename, "./log./%datetime{%Y%M%d}.log");
     el::Loggers::reconfigureAllLoggers(el::ConfigurationType::MaxLogFileSize, "2097152");
     el::Loggers::reconfigureAllLoggers(el::ConfigurationType::PerformanceTracking, "false");
     el::Loggers::reconfigureAllLoggers(el::ConfigurationType::ToStandardOutput, "false");

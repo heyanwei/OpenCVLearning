@@ -33,7 +33,7 @@ include_directories(
 )
 
 add_executable(
-    demo 
+    doit
     ${DIRSRCS}
     ${DIR_LOG_SRCS}
     ${DIR_INTERFACE_SRCS}
@@ -44,4 +44,4 @@ add_executable(
     ${DIR_CONSOLE_SRCS}
     )
 
-target_link_libraries(demo ${OpenCV_LIBS})
+target_link_libraries(doit ${OpenCV_LIBS})
