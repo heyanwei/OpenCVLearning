@@ -1,5 +1,11 @@
 srv=person-detection
 
+cleanlog:
+	rm -r build/log
+
+valgrind:
+	valgrind --leak-check=yes build/person-srv
+
 docker:
 	docker build . -t ${srv}:latest
 
