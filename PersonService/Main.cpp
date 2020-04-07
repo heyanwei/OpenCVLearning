@@ -2,6 +2,7 @@
 
 #include <gflags/gflags.h>
 #include <glog/logging.h>
+#include "gtest/gtest.h"
 
 #include "utils/file/directory.h"
 
@@ -23,7 +24,12 @@ int main(int argc, char *argv[])
     google::InitGoogleLogging(argv[0]);
     google::InstallFailureSignalHandler();
 
+    testing::InitGoogleTest(&argc, argv);
+
     LOG(INFO)<<"is_open_trace_log: "<<FLAGS_is_open_trace_log;
+
+    int testres = RUN_ALL_TESTS();
+    LOG(INFO)<<"RUN_ALL_TESTS finish, res: "<<testres;
 
     google::ShutdownGoogleLogging();
     google::ShutDownCommandLineFlags();

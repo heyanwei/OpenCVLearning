@@ -4,13 +4,13 @@ cleanlog:
 	rm -r build/log
 
 valgrind:
-	valgrind --leak-check=yes build/person-srv
+	cd build && valgrind --leak-check=yes ./person-srv
 
 docker:
 	docker build . -t ${srv}:latest
 
 	docker tag ${srv} wilsonhe2019/${srv}
-	docker push wilsonhe2019/${srv}
+	# docker push wilsonhe2019/${srv}
 
 rundocker:
 	docker run wilsonhe2019/${srv}

@@ -10,6 +10,8 @@ SET(CMAKE_CXX_FLAGS_RELEASE "$ENV{CXXFLAGS} -O3 -Wall -fPIC")
 
 SET(EXENAME person-srv)
 
+SET(GTESTLIB /usr/local/lib/libgtest.a)
+
 aux_source_directory(. DIRSRCS)
 aux_source_directory(utils/file/. UFILESRCS)
 
@@ -22,4 +24,4 @@ add_executable(
     ${DIRSRCS}
     ${UFILESRCS}
     )
-target_link_libraries(${EXENAME} gflags libglog.a)
+target_link_libraries(${EXENAME} gflags libglog.a ${GTESTLIB})
